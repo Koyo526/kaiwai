@@ -18,7 +18,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
         const selectedWord = info.selectionText;
         chrome.storage.local.get(["feedback"], (data) => {
             const feedback = data.feedback || {};
-            fetch(chrome.runtime.getURL("words.json"))
+            fetch(chrome.runtime.getURL("json/words.json"))
                 .then((response) => response.json())
                 .then((wordsData) => {
                     const closestWord = findClosestWord(selectedWord, wordsData, feedback);
@@ -28,9 +28,9 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
                     if (chrome.scripting) {
                         chrome.scripting.executeScript({
                             target: { tabId: tab.id },
-                            files: ['content.js']
+                            files: ['js/content.js']
                         }, () => {
-                            chrome.tabs.sendMessage(tab.id, { word: closestWord, meaning })
+                            chrome.tabs.sendMessage(tab.id, { word: closestWord, meaning ,selectedWord})
                                 .then((response) => {
                                     console.log(response);
                                 })
