@@ -126,10 +126,7 @@ function sendFeedback(word, isPositive) {
         const feedback = data.feedback || {};
         feedback[word] = feedback[word] || 1;
         feedback[word] += isPositive ? 1 : -1;
-        console.log("Feedback Data:", feedback);
-        //フィードバックデータをfeedback.jsonに保存
-        
-
+        console.log("Feedback Data:", feedback);  
         chrome.storage.local.set({ feedback });
     });  
 }
