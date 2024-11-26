@@ -30,7 +30,7 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
                             target: { tabId: tab.id },
                             files: ['js/content.js']
                         }, () => {
-                            chrome.tabs.sendMessage(tab.id, { word: closestWord, meaning })
+                            chrome.tabs.sendMessage(tab.id, { word: closestWord, meaning ,selectedWord})
                                 .then((response) => {
                                     console.log(response);
                                 })
