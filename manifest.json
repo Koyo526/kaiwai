@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "単語の意味を見る",
+    "version": "1.0",
+    "description": "Webサイト上の単語の意味を表示し、フィードバックを収集する拡張機能",
+    "permissions": [
+        "contextMenus",
+        "storage",
+        "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+        {
+        "matches": ["http://*/*", "https://*/*"],
+        "run_at":"document_start",
+            "js": [ "content.js" ]
+        }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png"
+      }
+    }
+    
+  }
+
+
