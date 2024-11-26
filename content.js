@@ -8,16 +8,6 @@ chrome.runtime.onMessage.addListener((message) => {
     }
 
     if (message.word && message.meaning) {
-        // const resultDiv = document.createElement("div");
-        // resultDiv.id = "popup-result"; // ポップアップにIDを設定
-        // resultDiv.style.position = "fixed";
-        // resultDiv.style.bottom = "10px";
-        // resultDiv.style.right = "10px";
-        // resultDiv.style.backgroundColor = "white";
-        // resultDiv.style.border = "1px solid black";
-        // resultDiv.style.padding = "10px";
-        // resultDiv.style.zIndex = 10000;
-        // resultDiv.style.color = "black"; // 文字色を黒色に設定
 
         // 閉じるボタンを追加
         // 後日実装
@@ -39,12 +29,6 @@ chrome.runtime.onMessage.addListener((message) => {
 
         console.log("Word:", message.word);
         console.log("Meaning:", message.meaning);
-        // resultDiv.innerHTML += `
-        //     <p><strong>${message.word}</strong>: ${message.meaning}</p>
-        //     <p>この回答は良いですか？</p>
-        //     <button id="feedback-yes">はい</button>
-        //     <button id="feedback-no">いいえ</button>
-        // `;
 
         const resultDiv = document.createElement("div");
         resultDiv.id = "popup-result"; // ポップアップにIDを設定
