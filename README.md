@@ -2,7 +2,7 @@
 
 Kaiwaiは、Webサイト上の単語の意味を表示し、フィードバックを収集するためのChrome拡張機能です。
 
-##使用例
+## 使用例
 
 https://github.com/user-attachments/assets/117af268-bc3e-4b72-be9a-de9122422951
 
